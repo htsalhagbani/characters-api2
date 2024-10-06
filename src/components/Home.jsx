@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 
 function Home() {
     const [characters, setCharacters] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
+    const navigate=useNavigate();
 
     const fetchCharacters = async () => {
             const response = await fetch('https://66e7e69db17821a9d9da6ed1.mockapi.io/Blog');
@@ -64,10 +65,18 @@ function Home() {
                 <p className="text-gray-600">{character.gender}</p>
                 <button
                     onClick={() => onDelete(character.id)}
-                    className="bg-red-600 text-white p-2 rounded-lg mt-2 hover:bg-red-700 transition duration-300 shadow-md"
+                    className="bg-red-600 text-white  mr-5 p-2 rounded-lg mt-2 hover:bg-red-700 transition duration-300 shadow-md"
                 >
                     Delete
                 </button>
+                <Link to={`/Update/${character.id}`}>
+                <button
+                //    onClick={()=>{navigate(`/Update/${character.id}`)}}
+                    className="bg-[blue] text-white p-2 rounded-lg mt-2 hover:bg-[gray] transition duration-300 shadow-md"
+                >
+                    Update
+                </button>
+                </Link>
             </div>
         ))
     ) : (
