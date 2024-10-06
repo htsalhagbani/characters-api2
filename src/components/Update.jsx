@@ -36,11 +36,11 @@ const updatename = () => {
       <h1 className='text-2xl font-bold'>Update Character info: </h1>
       <h3 className='text-2xl font-bold'>image Url:</h3>
       <input type="text" value={url} onChange={(e)=>{setUrl(e.target.value)}} placeholder="Type here image Url" className="input w-[50%] max-sm:w-[100%] border border-black" />
-      <button className="btn btn-primary md:w-1/5 md:text-2xl text-lg" onClick={updateimg}>Update image</button>
+      <button className="btn btn-primary md:w-[10vw] md:text-2xl text-lg" onClick={updateimg}>Update image</button>
 
       <h3 className='text-2xl font-bold'>Name:</h3>
       <input type="text" placeholder="Type here Name" value={name} onChange={(e)=>{setname(e.target.value)}} className="input w-[50%] max-sm:w-[100%] border border-black" />
-      <button className="btn btn-primary md:w-1/5 md:text-2xl text-lg" onClick={updatename}>Update name</button>
+      <button className="btn btn-primary md:w-[10vw]  md:text-2xl text-lg" onClick={updatename}>Update name</button>
 
       
       
